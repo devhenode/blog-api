@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import express from "express";
 import "./config/db.js";
-import authRoutes from './routes/authRoutes.js';
-import blogRoutes from './routes/blogRoutes.js';
+import authRoutes from './routes/authroutes.js';
+import blogRoutes from './routes/blogroutes.js';
 
 
 const app = express();
