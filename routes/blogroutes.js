@@ -1,10 +1,10 @@
 import express from 'express';
-import { 
-    getPublishedBlogs, 
-    getSingleBlog, 
-    createBlog, 
-    deleteBlog, 
-    updateBlog, 
+import {
+    getPublishedBlogs,
+    getSingleBlog,
+    createBlog,
+    deleteBlog,
+    updateBlog,
     getMyBlogs
 } from '../controllers/blogController.js';
 import { protect } from '../middlewares/authMiddleware.js';
@@ -12,13 +12,11 @@ import { protect } from '../middlewares/authMiddleware.js';
 const router = express.Router();
 
 router.get('/', getPublishedBlogs);
-router.get('/:id', getSingleBlog); 
+router.get('/:id', getSingleBlog);
 
-router.use(protect);
-
-router.post('/', createBlog);
-router.get('/p/my-blogs', getMyBlogs);
-router.patch('/:id', updateBlog); 
-router.delete('/:id', deleteBlog);
+router.post('/', protect, createBlog);
+router.get('/p/my-blogs', protect, getMyBlogs);
+router.patch('/:id', protect, updateBlog);
+router.delete('/:id', protect, deleteBlog);
 
 export default router;
