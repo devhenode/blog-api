@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Welcome to  Henry Blog API!");
+    res.send("Welcome to Henry O. (devhenode) Blog API!");
 });
 
 app.use('/api/auth', authRoutes);
